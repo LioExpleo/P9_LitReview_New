@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Inscrivez-vous</h2>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+        {% for field in form %}
+          <tr>
+            <td>{{ field.label_tag }}</td>
+            <td>{{ field }}</td>
+          </tr>
+          {% for error in field.errors %}
+            <tr><td></td><td class="alert alert-danger">{{ error }}</td></tr>
+            {% endfor %}
+          {% endfor %}
+         </table>
+         <td><a>8 caracteres minimum</a></td>
+
+        <button onclick="window.location.href = 'http://127.0.0.1:8000/login/';">Retour pour se connecter</button>
+
+        <button type="submit">s'inscrire</button>
+
+    </form>
+    <div>
+    <small>
+        Déjà inscrit.e?
+        <a href="{% url 'login' %}">Se connecter</a>
+    </small>
+  </div>
+{% endblock %}
