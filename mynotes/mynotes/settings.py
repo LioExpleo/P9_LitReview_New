@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mynotesapp',
     'usersapp',
+    'app_crit',
+
 ]
 
 MIDDLEWARE = [

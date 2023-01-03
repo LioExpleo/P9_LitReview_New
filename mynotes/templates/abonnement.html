@@ -1,0 +1,30 @@
+{% extends "base_critique.html" %}
+{% block content %}
+
+
+<h3> Page d'abonnement</h3>
+
+<button onclick="window.location.href = 'http://127.0.0.1:8000/login/';">Envoyer</button>
+<button onclick="window.location.href = 'http://127.0.0.1:8000/login/';">Désabonner</button>
+<button onclick="window.location.href = 'http://127.0.0.1:8000/login/';">Désabonner</button>
+<button onclick="window.location.href = 'http://127.0.0.1:8000/login/';">Désabonner</button>
+
+
+{%if notes %}
+    {% for note in notes %}
+        <article class="media content-section">
+            <div class="media-body">
+                <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+
+                <div class="article-metadata">
+                    <small class="article-author">{{ note.author }}, </small>
+                    <small class="article-date">{{ note.creation_date }}</small>
+                </div>
+                <p class="article-content">{{ note.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% else %}
+       <h5 class="alert alert-warning">Vous n'avez pas encore de notes !</h5>
+{% endif %}
+{% endblock %}

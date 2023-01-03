@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mynotesapp.urls')),
     path('', include('usersapp.urls')),
+    path('', include('app_crit.urls')),
+
 ]
