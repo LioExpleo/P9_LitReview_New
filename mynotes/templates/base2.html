@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="fr">
     <head>
         <meta charset='utf-8'>
@@ -8,11 +11,13 @@
             {% endblock %}
         </title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        {% load static %}
-        <link href="{% static 'review/style.css' %}" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href=" % static 'mynotes/styles.css' %}" />
+
     </head>
     <body>
         <header>
+
             <div class="header__logo">
                 <img class="header__logo__image" src="{% static 'review//pictures/logo.png' %}" alt="logo">
                 <span class="header__logo__title">LITReview</span>
@@ -25,16 +30,16 @@
                 {% if request.user.is_authenticated %}
                     <ul class="header__nav__list">
                         <li>
-                            <a href="{% url 'feed' %}">Flux</a>
+                            <a href="{% url 'flux' %}">Flux</a>
                         </li>
                         <li>
-                            <a href="{% url 'posts' %}">Posts</a>
+                            <a href="{% url 'flux' %}">Posts</a>
                         </li>
                         <li>
-                            <a href="{% url 'subscription' %}">Abonnements</a>
+                            <a href="{% url 'abonnement' %}">Abonnements</a>
                         </li>
                         <li>
-                            <a href="{% url 'userlogout' %}">Se déconnecter</a>
+                            <a href="{% url 'logout' %}">Se déconnecter</a>
                         </li>
                     </ul>
                 {% endif %}

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'mynotesapp',
     'usersapp',
     'app_crit',
-
+    'myform',
+    'appl_crit',
 ]
 
 MIDDLEWARE = [

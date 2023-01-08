@@ -1,41 +1,31 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-{% extends "base2.html" %}
-
-{% block content %}
+{% extends "base2.html" %} {% block content %}
 {%if ticket %}
     {% for ticket in ticket %}
         <article class="media content-section">
             <div class="media-body">
-                <div>
-                <h2>Titre</h2>
-                <h3><a class="article-title" href="#">{{ ticket.title }}</a></h3>
-                    </div>
-
-                <h2>Description</h2>
+                <h2><a class="article-title" href="#">{{ ticket.title }}</a></h2>
                 <h2><a class="article-title" href="#">{{ ticket.description }}</a></h2>
-
-                <h2>Utilisateur</h2>
-                <h2><a class="article-title" href="#">{{ ticket.user }}</a>
-
-                <h2>Nom de l'image ( a supprimer quand le téléchargment fonctionnera</h2>
+                <h2><a class="article-title" href="#">{{ ticket.user }}</a></h2>
                 <h2><a class="article-title" href="#">{{ ticket.image }}</a></h2>
-
-                <h2>Téléchargment de l'image</h2>
-                    <img src="{{ ticket.image }}">
-
-                <h2>date/heure du ticket</h2>
+                <img src="{{ ticket.image }}">
                 <h2><a class="article-title" href="#">{{ ticket.time_created }}</a></h2>
+                <button class="button-review" type="submit" >Envoyer</button>
+                <button class="button-review" type="submit" >Modifier</button>
 
-                <button type="submit" class="button" title="Exécuter l’action sélectionnée" name="enr_ticket" value="0">Envoyerzzzzzzzzzzz</button>
-                <form method="enr_ticket" enctype="multipart/form-data">
+                <form method="post_crit" enctype="multipart/form-data">
                 {{ ticket.as_p }}
                 {% csrf_token %}
-                <button type="submit" >ENVOYER</button>
+                <button type="submit" >Envoyerrrrrrrrrr</button>
                 </form>
 
+                <form action="/ticket/" method="post">
+                    {% csrf_token %}
+                    {{ ticket_form.as_p }}
+                    {{ author_form.as_p }}
+                <input type="submit" value="submit">
+                </form>
 
                 <div class="article-metadata">
                     <small class="article-author">{{ ticket.author }}, </small>
