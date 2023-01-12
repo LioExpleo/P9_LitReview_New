@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'usersapp',
     'app_crit',
     'myform',
-    'appl_crit',
+
 ]
 
 MIDDLEWARE = [

@@ -21,6 +21,6 @@ urlpatterns = [
     path('', include('mynotesapp.urls')),
     path('', include('usersapp.urls')),
     path('', include('app_crit.urls')),
-    path('', include('myform.urls')),
+    #path('', include('myform.urls')),
     #path(''), include('appl_crit.urls'),
 ]
